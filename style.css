@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(30, 0, 33);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.form-container,
+.login-container,
+.join-container {
+    width: 380px;
+    background-color: rgb(30, 0, 33);
+    text-align: left;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: white;
+}
+
+input, select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.85rem;
+  border-radius: 8px;
+  border: 1px solid rgb(175, 153, 177);
+  background-color: rgb(40, 0, 43);
+  color: white;
+  font-size: 1rem;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: white;
+}
+
+input::placeholder{
+    color: rgb(175, 153, 177);
+}
+
+.btn {
+  width: 100%;
+  background-color: white;
+  color: rgb(30, 0, 33);
+  padding: 0.9rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  border-radius: 25px;
+  padding: 0.9rem;
+  margin-bottom: 0.7rem;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.social-btn:hover {
+  background-color: white;
+  color: rgb(30, 0, 33);
+}
+
+.social-btn img {
+  width: 20px;
+  margin-right: 8px;
+  filter: invert(100%);
+}
+
+.social-btn:hover img {
+	filter: brightness(0) saturate(100%) invert(54%) sepia(45%) saturate(373%) hue-rotate(246deg) brightness(29%) contrast(123%);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.accpass:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+}
+
+.or {
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  color: white;
+  text-align: center;
+}
+
+.links {
+    margin-top: 1.2rem;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.contact{
+    text-decoration: underline;
+}
+
+.small-text {
+  font-size: 0.7rem;
+  color: rgb(175, 153, 177);
+  margin-top: 1rem;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.checkbox-group {
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    color: rgb(175, 153, 177);
+    text-align: left;
+}
+
+.checkbox-group input {
+  margin-right: 6px;
+}
+
+.name-group {
+  display: flex;
+  gap: 10px;
+}
+
+.namigi {
+  font-size: 0.75rem;
+  color: rgb(175, 153, 177);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+@media (max-width: 420px) {
+  .form-container,
+  .login-container,
+  .join-container {
+    width: 90%;
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="slike/ikona.ico">
+  <link rel="stylesheet" href="style.css" type="text/css" media="all">
+  <title>Sign in</title>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Sign in to myPremier League</h1>
+
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" id="email" placeholder="Email address" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Password" required>
+    </div>
+
+    <button class="btn" onclick="login()">Sign in</button>
+
+    <div class="or">or</div>
+
+    <a href="https://accounts.google.com/"><div class="social-btn"><img src="slike/google.svg" alt="">Sign in with Google</div></a>
+    <a href="https://facebook.com/"><div class="social-btn"><img src="slike/facebook.svg" alt="">Sign in with Facebook</div></a>
+    <a href="https://account.apple.com/"><div class="social-btn"><img src="slike/apple.svg" alt="">Sign in with Apple</div></a>
+    <a href="https://x.com/"><div class="social-btn"><img src="slike/x.svg" alt="">Sign in with X</div></a>
+
+    <div class="links">
+      <p><a href="registracija.html" class="accpass">No account? Join now</a></p>
+      <p><a href="#" class="accpass">Reset password</a></p>
+      <p>Returning user and problems logging in – <a href="#" class="contact">contact us</a></p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      if (email === "" || password === "") {
+        Swal.fire({
+          title: 'Napaka',
+          text: 'Prosimo, izpolnite oba polja.',
+          icon: 'error',
+          confirmButtonText: 'V redu'
+        });
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        Swal.fire({
+          title: 'Neveljaven e-mail',
+          text: 'Vnesite veljaven e-poštni naslov.',
+          icon: 'warning',
+          confirmButtonText: 'Razumem'
+        });
+        return;
+      }
+
+      Swal.fire({
+        title: 'Uspeh!',
+        text: 'Prijava je bila uspešna.',
+        icon: 'success',
+        confirmButtonText: 'Super'
+      });
+    }
+  </script>
+</body>
+</html>

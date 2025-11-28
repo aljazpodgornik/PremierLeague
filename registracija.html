@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="slike/ikona.ico">
+  <link rel="stylesheet" href="style.css" type="text/css" media="all">
+  <title>Registration</title>
+</head>
+<body>
+  <div class="join-container">
+    <h1>Join myPremierLeague</h1>
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="Email Address" required>
+    </div>
+    <a href="#"><button class="btn" onclick="register()">Join with email</button></a>
+    <div class="or">Or</div>
+    <a href="https://accounts.google.com/"><div class="social-btn"><img src="slike/google.svg" alt="">Join with Google</div></a>
+    <a href="https://facebook.com/"><div class="social-btn"><img src="slike/facebook.svg" alt="">Join with Facebook</div></a>
+    <a href="https://account.apple.com/"><div class="social-btn"><img src="slike/apple.svg" alt="">Join with Apple</div></a>
+    <a href="https://x.com/"><div class="social-btn"><img src="slike/x.svg" alt="">Join with X</div></a>
+
+    <div class="links">
+      <a href="index.html" class="accpass">Already have an account? Sign in</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  function register() {
+    const email = document.getElementById('email').value;
+
+    if (email === "") {
+      Swal.fire({
+        title: 'Manjka e-mail',
+        text: 'Vnesite svoj e-poštni naslov.',
+        icon: 'error',
+        confirmButtonText: 'V redu'
+      });
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      Swal.fire({
+        title: 'Neveljaven e-mail',
+        text: 'Prosimo, vnesite veljaven e-poštni naslov.',
+        icon: 'warning',
+        confirmButtonText: 'Razumem'
+      });
+      return;
+    }
+
+    Swal.fire({
+	  title: 'Uspeh!',
+	  text: 'Račun je bil uspešno ustvarjen.',
+	  icon: 'success',
+	  confirmButtonText: 'Super'
+	}).then((result) => {
+	  if (result.isConfirmed) {
+		// preusmeri na naslednjo stran in v URL dodaj email
+		window.location.href = "podatki.html?email=" + encodeURIComponent(email);
+  }
+});
+
+  }
+</script>
+</body>
+</html>
